@@ -15,7 +15,8 @@ var getUser = async (req,res) => {
             username:req.params.username
         }
     })
-    res.status(200).json({data:data})
+    console.log(data.toJSON());
+    res.status(200).json(data.toJSON())
 }
 
 module.exports={addUser, getUser}

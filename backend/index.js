@@ -1,12 +1,14 @@
 require('./models')
+const cors = require('cors');
 var userctl = require('./controllers/UserController')
 const express  =require("express");
-
 const app = express();
 const PORT = 3001;
 
 
-
+app.use(cors({
+    origin: "http://localhost:3000"
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
@@ -16,7 +18,9 @@ app.listen(PORT, ()=> {
  });
 
 //app.get('/add', userctl.addUser)
-app.get('/user/:username', userctl.getUser)    
+app.post('/user/:username', userctl.getUser)    
+
+
 
 
 

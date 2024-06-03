@@ -7,5 +7,5 @@ function App() {
     </div>
   );
 }
-"dsd"
+
 export default App;
